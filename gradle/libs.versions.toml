@@ -1,0 +1,70 @@
+[versions]
+agp = "8.6.0"
+
+#kotlin
+kotlin = "2.0.20"
+coroutines = "1.8.1"
+
+#compiler
+ksp = "2.0.20-1.0.24"
+
+#androidx
+androidxCoreKtx = "1.13.1"
+androidxAppcompat = "1.7.0"
+androidxAnnotation = "1.8.2"
+androidxActivityKtx = "1.9.2"
+
+#jetpack
+jetpackPref = "1.2.1"
+jetpackRoom = "2.6.1"
+jetpackLifecycle = "2.8.5"
+
+#DI
+daggerHilt = "2.52"
+androidHilt = "1.2.0"
+
+#test
+junit = "4.13.2"
+androidxJunit = "1.2.1"
+androidxEspressoCore = "3.6.1"
+
+[libraries]
+#kotlin
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
+kotlin-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlin-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+#androidx
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCoreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppcompat" }
+androidx-annotation = { group = "androidx.annotation", name = "annotation", version.ref = "androidxAnnotation" }
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "androidxActivityKtx" }
+
+#jetpack
+jetpack-pref-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "jetpackPref" }
+jetpack-room-ktx = { group = "androidx.room", name = "room-runtime", version.ref = "jetpackRoom" }
+jetpack-room-runtime = { group = "androidx.room", name = "room-ktx", version.ref = "jetpackRoom" }
+jetpack-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "jetpackRoom" }
+jetpack-lifeycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version.ref = "jetpackLifecycle" }
+jetpack-lifeycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "jetpackLifecycle" }
+jetpack-lifeycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "jetpackLifecycle" }
+jetpack-lifeycle-viewmodel-state = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-savedstate", version.ref = "jetpackLifecycle" }
+jetpack-lifeycle-compiler = { group = "androidx.lifecycle", name = "lifecycle-compiler", version.ref = "jetpackLifecycle" }
+
+#DI
+dagger-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "daggerHilt" }
+dagger-hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "daggerHilt" }
+android-hilt-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "androidHilt" }
+
+#test
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxEspressoCore" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrainsKotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+daggerHilt = { id = "com.google.dagger.hilt.android", version.ref = "daggerHilt" }
+
