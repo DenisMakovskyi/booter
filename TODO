@@ -1,0 +1,13 @@
+1. Receive the boot event in BootReceiver and make a one-time work request ('one-time worker') to persist the event timestamp in the local DB via BootRepository(not implemented).
+
+2. BootRepository stores the event history, calculates the delay between notifications, and schedules the next notification appearance using the data saved in ConfigPreferences.
+
+3. BootRepository also defines the NotificationContent and sends all necessary data to the 'periodic worker', which is responsible for notification delivery.
+
+4. The 'periodic worker' may be updated (cancelled and rescheduled) if the user dismisses the notification.
+
+5. When the notification is dismissed by the user, the app catches this event in the NotificationReceiver and invokes the appropriate method in BootRepository, which increments ConfigPreferences::dismissedCount value. 
+As a result, the next notification delay is recalculated, and the 'periodic worker' is updated.
+
+6. Create a simple screen (activity + ViewModel) to display the boot event history and provide an ability to change the configuration.
+
